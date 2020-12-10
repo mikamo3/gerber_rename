@@ -20,4 +20,7 @@ for drl in ${GERBER_DIR}/${PCB_NAME}-*.drl; do
 done
 
 cd $GERBER_DIR
+if [ -e ${PCB_NAME}.zip ]; then
+  rm ${PCB_NAME}.zip
+fi
 zip ${PCB_NAME}.zip ${PCB_NAME}.* ${PCB_NAME}-*
